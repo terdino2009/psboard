@@ -1,29 +1,20 @@
 name = "psboard-collab"
-type = "service"
 main = "src/index.ts"
 compatibility_date = "2024-12-16"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "psboard-collab"
-database_id = "YOUR_DB_ID_HERE"
+database_id = "73ff2288-a58d-46f3-9f61-7166514d9246"
 
 [[durable_objects.bindings]]
 name = "COLLABORATION"
 class_name = "CollaborationDurableObject"
-script_name = "psboard-collab"
 
-[env.development]
-vars = {
-  ENVIRONMENT = "development",
-  JWT_SECRET = "dev-secret-key-change-in-production"
-}
+[[migrations]]
+tag = "v1"
+new_classes = ["CollaborationDurableObject"]
 
-[env.production]
-vars = {
-  ENVIRONMENT = "production",
-  JWT_SECRET = "prod-secret-key-change-in-production"
-}
-
-[analytics]
-enabled = true
+[vars]
+ENVIRONMENT = "production"
+JWT_SECRET = "change-this-secret-key-to-something-random-and-secure"
