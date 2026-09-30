@@ -1,10 +1,4 @@
-# Конфігурація для Cloudflare Worker: psboard
-name = "psboard"
-main = "src/index.js"
+name = "psboard-collab"
+main = "index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = [ "nodejs_compat" ]
-
-# Зверніть увагу:
-# Секцію [routes] ВИДАЛЕНО, тому що вказання чужого домену
-# або домену без підключеної зони в Cloudflare блокує деплой!
-# Деплой буде доступний за адресою: https://psboard.<ваш-піддомен>.workers.dev
