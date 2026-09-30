@@ -1,20 +1,10 @@
-name = "psboard-collab"
-main = "src/index.ts"
-compatibility_date = "2024-12-16"
+# Конфігурація для Cloudflare Worker: psboard
+name = "psboard"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = [ "nodejs_compat" ]
 
-[[d1_databases]]
-binding = "DB"
-database_name = "psboard-collab"
-database_id = "73ff2288-a58d-46f3-9f61-7166514d9246"
-
-[[durable_objects.bindings]]
-name = "COLLABORATION"
-class_name = "CollaborationDurableObject"
-
-[[migrations]]
-tag = "v1"
-new_classes = ["CollaborationDurableObject"]
-
-[vars]
-ENVIRONMENT = "production"
-JWT_SECRET = "change-this-secret-key-to-something-random-and-secure"
+# Зверніть увагу:
+# Секцію [routes] ВИДАЛЕНО, тому що вказання чужого домену
+# або домену без підключеної зони в Cloudflare блокує деплой!
+# Деплой буде доступний за адресою: https://psboard.<ваш-піддомен>.workers.dev
