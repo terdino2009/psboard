@@ -1,0 +1,24 @@
+{
+  "name": "psboard-workers",
+  "version": "1.0.0",
+  "description": "PS Board - Multi-user whiteboarding application with Cloudflare Workers",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "type-check": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240912.0",
+    "wrangler": "^3.71.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.6"
+  }
+}
